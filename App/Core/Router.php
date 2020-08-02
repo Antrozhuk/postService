@@ -14,13 +14,7 @@ class Router
         }
         $url = is_null($url) ? $_SERVER['REQUEST_URI'] : $url;
 
-        $href = explode('/', $url);
-        array_shift($href);
-        if ($href[0] . $href[1]) {
-            $route = Config::ROUTS[$href[0] . '/' . $href[1]];
-        } else {
-            $route = Config::ROUTS[$url];
-        }
+        $route = Config::ROUTS[$url];
 
         $route = explode('@', $route);
         if ($route[0]) {

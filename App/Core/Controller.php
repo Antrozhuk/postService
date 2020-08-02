@@ -25,10 +25,9 @@ class Controller
                 return '../public/' . $path;
             });
             $title = new TwigFunction('title', function ($title = null) {
-                if ($title) {
-                    return $title . ' - dev';
-                }
-                return 'dev';
+
+                    return $title ;
+
             });
 
             $twig->addFunction($asset);
